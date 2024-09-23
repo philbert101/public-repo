@@ -9,7 +9,7 @@ spec:
   ingressClassName: nginx
   tls:
   - hosts:
-    - helloworld2.example.com
+    - myworld.example.com
     secretName: tls
   rules:
   - host: helloworld.example.com
