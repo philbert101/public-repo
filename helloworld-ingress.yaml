@@ -3,6 +3,12 @@ kind: Ingress
 metadata:
   name: hello-world-ingress
   annotations: 
+    nginx.ingress.kubernetes.io/server-snippets: |
+      location / {
+          return 302 /coffee;
+      }      
+    nginx.ingress.kubernetes.io/location-snippets: |
+      add_header my-test-header test-value;   
     nginx.ingress.kubernetes.io/use-regex: 'true'     
     # type of authentication
     nginx.ingress.kubernetes.io/auth-type: basic
