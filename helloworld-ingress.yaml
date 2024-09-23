@@ -12,7 +12,17 @@ spec:
     - myearth.example.com
     secretName: tls
   rules:
-  - host: helloworld.example.com
+  - host: myearth.example.com
+    http:
+      paths:
+      - path: /
+        pathType: Prefix
+        backend:
+          service:
+            name: aks-helloworld-one
+            port:
+              number: 80
+  - host: myearth2.example.com
     http:
       paths:
       - path: /
